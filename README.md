@@ -9,3 +9,11 @@ Over-attempting to get more and more pure nodes leads to overfitting.
 Explanation: When a decision tree tries to create very pure nodes by splitting the data too finely, it can end up fitting the noise in the training data, leading to overfitting.
 Low values of the 'min_samples_split' parameter in the Decision Tree class of sklearn lead to overfitting.
 Explanation: A low value of 'min_samples_split' allows the tree to split nodes even for a small number of data points, which can lead to overfitting by creating very deep and complex trees.
+
+Over-attempting to get more and more pure nodes leads to overfitting.
+Low values of the ‘ min_samples_split ’ parameter in the Decision Tree class of sklearn lead to overfitting.
+Explanation :
+A node is 100 % pure when all of its data belongs to a single class. If a decision tree model tries to attempt more and more pure nodes, it means that instead of generalizing it is trying to be highly accurate on the training data. This is nothing but overfitting the data.
+The parameter 'min_samples_split' is used to set the minimum number of data points required to split further. This means that the tree will stop splitting if the number of observations left is not greater than min_samples_split. This helps to control depth which therefore prevents overfitting. Thus, if the value of this parameter is set low, the tree will keep splitting more and more which will lead to overfitting.
+The 'max_depth' parameter represents how deep your decision tree will be. The more you decrease this number, the less the number of splits, which will lead to a less complex and more generalized model. Thus, Low values of this parameter do not lead to overfitting.
+A decision tree model should have optimized maximum depth and a minimum number of points to split a node. With this, high values of depth will lead to overfitting, and low values of depth will lead to underfitting.
